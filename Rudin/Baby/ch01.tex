@@ -3,6 +3,40 @@
 \label{ch:01}
 
 \begin{enumerate}
+\item Suppose \(r+x\) is rational.  Let \(r = p/q\) and \(r+x = k/j\), where \(p,q,k,j\) are all integers.  Then
+  \begin{equation*}
+    x = (r+x) - r = k/j - p/q = \frac{kq - jp}{jq},
+  \end{equation*}
+  which contradicts the irrationality of \(x\).
+
+  Similarly, suppose \(rx\) is rational.  Let \(rx = m/n\), where \(m,n\) are all integers.  Then, since \(r \ne 0\), we have
+  \begin{equation*}
+    x = (rx)/r = \frac{m/n}{p/q} = \frac{mq}{pn},
+  \end{equation*}
+  which also contradicts the irrationality of \(x\).
+  \qed
+
+\item Suppose \((p/q)^2 = 12\), where \(p\) and \(q\) are positive integers.  Then we have
+  \begin{equation*}
+    2^2 \cdot 3 \cdot q^2 = p^2.
+  \end{equation*}
+  After factorizing both sides, the left-hand side has odd number of \(3\)'s as factors, whereas the right-hand side has even number of \(3\)'s as factors.  Thus, we have two distinct ways of prime factorization, which contradicts the fundamental theorem of arithmetic.
+  \qed
+
+  Another way is to use infinite descent. Suppose \(p/q\) is an irreducible fraction such that \((p/q)^2 = 12\).  Since \(3^2 < 12 = p^2/q^2 < 4^2\), we have
+  \begin{equation*}
+    3q < p < 4q.
+  \end{equation*}
+  Let \(m = 12q - 3p,\ n = p - 3q\). Then, we have
+  \begin{equation*}
+    m^2 - 12n^2
+    = (12q - 3p)^2 - 12(p - 3q)^2
+    = 3(12q^2 - p^2)
+    = 0.
+  \end{equation*}
+  This means that we found another fraction \(m/n\) such that \((m/n)^2 = 12\) and \(n = p - 3q < q\), which contradicts the irreducibility of \(p/q\).
+  \qed
+
 \item 
 \end{enumerate}
 
