@@ -23,11 +23,11 @@
   After factorizing both sides, the left-hand side has odd number of \(3\)'s as factors, whereas the right-hand side has even number of \(3\)'s as factors.  Thus, we have two distinct ways of prime factorization, which contradicts the fundamental theorem of arithmetic.
   \qed
 
-  Another way is to use infinite descent. Suppose \(p/q\) is an irreducible fraction such that \((p/q)^2 = 12\).  Since \(3^2 < 12 = p^2/q^2 < 4^2\), we have
+  Another way is to use infinite descent.  Suppose \(p/q\) is an irreducible fraction such that \((p/q)^2 = 12\).  Since \(3^2 < 12 = p^2/q^2 < 4^2\), we have
   \begin{equation*}
     3q < p < 4q.
   \end{equation*}
-  Let \(m = 12q - 3p,\ n = p - 3q\). Then, we have
+  Let \(m = 12q - 3p,\ n = p - 3q\).  Then, we have
   \begin{equation*}
     m^2 - 12n^2
     = (12q - 3p)^2 - 12(p - 3q)^2
@@ -37,7 +37,40 @@
   This means that we found another fraction \(m/n\) such that \((m/n)^2 = 12\) and \(n = p - 3q < q\), which contradicts the irreducibility of \(p/q\).
   \qed
 
-\item 
+\item For (a), we have
+  \begin{align*}
+    y
+    &= 1y
+    && \reason{(M4)} \\
+    &= (x(1/x))y
+    && \reason{(M5)} \\
+    &= ((1/x)x)y
+    && \reason{(M2)} \\
+    &= (1/x)(xy)
+    && \reason{(M3)} \\
+    &= (1/x)(xz)
+    && \reason{Assumption} \\
+    &= ((1/x)x)z)
+    && \reason{(M3)} \\
+    &= (x(1/x))z
+    && \reason{(M2)} \\
+    &= 1z
+    && \reason{(M5)} \\
+    &= z.
+    && \reason{(M4)}
+  \end{align*}
+  Since \(x1 = 1x = 1\) due to (M2) and (M4), we obtain (b) by setting \(z = 1\) in (a).  Since \(x(1/x) = 1\) due to (M5), we obtain (c) by setting \(z = 1/x\) in (a).  Since \((1/x)x = x(1/x) = 1\) due to (M2) and (M5), we obtain (d) by substituting \(x\) with \(1/x\) and \(y\) with \(x\) in (c).
+  \qed
+
+\item Since \(E\) is non-empty, there is at least one element \(x \in E\).  By definition~1.7, we have \(α \le x\) and \(x \le β\).  If either of the two equalities holds, we obtain \(α \le β\) by simple substitution.  If neither holds, we obtain \(α \le β\) by definition~1.5(ii) (transitivity).
+  \qed
+
+\item Since \(\R\) is an ordered field and \(A\) is bounded below, \(\inf A\) exists in \(\R\) by theorem~1.11.  Let \(α = \inf A\).  For all \(x \in A\), we have \(α \le x\).  By properties of ordered fields, we obtain \(-x \le -α\).  This means \(-α\) is an upper bound of \(-A\).  If \(-γ < -α\), which means \(α < γ\), then there exists an \(x_0 \in A\) such that \(α \le x_0 < γ\) by definition~1.8, which is the same as \(-γ < -x_0 \le -α\). Thus, \(-γ\) is not an upper bound \(-A\).  This shows that
+  \begin{equation*}
+    \sup(-A) = -α = -\inf A.
+  \end{equation*}
+  By properties of fields, we obtain \(\inf A = -\sup(-A)\).
+  \qed
 \end{enumerate}
 
 % Local Variables:
