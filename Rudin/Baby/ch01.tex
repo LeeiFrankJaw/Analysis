@@ -146,9 +146,9 @@
 
     But \(b^t b^s = b^{t+s}\).  This means we find an \(r\) such that \(r = t + s \le x + y\) but \(b^{x+y} < b^r\), which contradicts our definition of \(b^{x+y}\) (it is not even an upper bound).
 
-    Suppose \(b^{x+y} > b^x b^y\).  Then by definition, there is a rational \(r \le x + y\) such that \(b^x b^y < b^r\).  If \(r < x + y\), then we let \(t = x - (x+y-r)/2\) and \(s = y - (x+y-r)/2\).  It follows that
+    Suppose \(b^{x+y} > b^x b^y\).  Then by definition, there is a rational \(r \le x + y\) such that \(b^x b^y < b^r\).  If \(r < x + y\), then there exist two rationals \(t\) and \(s\) such that \(x - (x+y-r)/2 < t < x\) and \(y - (x+y-r)/2 < s < y\) by the density of \(\Q\).  It follows that
     \begin{equation*}
-      b^x b^y < b^{x+y} < b^r = b^{t+s} = b^t b^s \le b^x b^y,
+      b^r < b^{t+s} = b^t b^s \le b^x b^y < b^r,
     \end{equation*}
     which is absurd.  If \(r = x + y\), then we apply the following fact: by the Archimedean property and Bernoulli's inequality, we can show that for any \(0 \le α < β\) there exists a rational \(w\) such that \(α < b^w < β\).  Thus there is a rational \(r_0\) such that \(b^x b^y < b^{r_0} < b^r = b^{x+y}\).  Repeat the previous steps and this completes the proof.
     \qed
