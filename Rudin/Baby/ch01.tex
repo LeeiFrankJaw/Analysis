@@ -2,6 +2,8 @@
 \chapter{The Real and Complex Number Systems}
 \label{ch:01}
 
+\section{Solutions to Exercises}
+
 \begin{enumerate}
 \item Suppose \(r+x\) is rational.  Let \(r = p/q\) and \(r+x = k/j\), where \(p,q,k,j\) are all integers.  Then
   \begin{equation*}
@@ -20,10 +22,10 @@
   \begin{equation*}
     2^2 \cdot 3 \cdot q^2 = p^2.
   \end{equation*}
-  After factorizing both sides, the left-hand side has odd number of \(3\)'s as factors, whereas the right-hand side has even number of \(3\)'s as factors.  Thus, we have two distinct ways of prime factorization, which contradicts the fundamental theorem of arithmetic.
+  After factorizing both sides, the left-hand side has odd number of \(3\)'s as factors, whereas the right-hand side has even number of \(3\)'s as factors.  Thus we have two distinct ways of prime factorization, which contradicts the fundamental theorem of arithmetic.
   \qed
 
-  Another way is to use infinite descent.  Suppose \(p/q\) is an irreducible fraction such that \((p/q)^2 = 12\).  Since \(3^2 < 12 = p^2/q^2 < 4^2\), we have
+  Another way is to use infinite descent.  Suppose \(p/q\) is an irreducible fraction such that \(q > 0\) and \((p/q)^2 = 12\).  Since \(3^2 < 12 = p^2/q^2 < 4^2\), we have
   \begin{equation*}
     3q < p < 4q.
   \end{equation*}
@@ -34,7 +36,7 @@
     = 3(12q^2 - p^2)
     = 0.
   \end{equation*}
-  This means that we found another fraction \(m/n\) such that \((m/n)^2 = 12\) and \(n = p - 3q < q\), which contradicts the irreducibility of \(p/q\).
+  This means that we found another fraction \(m/n\) such that \((m/n)^2 = 12\) but \(0 < n < q\), which contradicts the irreducibility of \(p/q\).
   \qed
 
 \item For (a), we have
@@ -65,13 +67,97 @@
 \item Since \(E\) is non-empty, there is at least one element \(x \in E\).  By definition~1.7, we have \(α \le x\) and \(x \le β\).  If either of the two equalities holds, we obtain \(α \le β\) by simple substitution.  If neither holds, we obtain \(α \le β\) by definition~1.5(ii) (transitivity).
   \qed
 
-\item Since \(\R\) is an ordered field and \(A\) is bounded below, \(\inf A\) exists in \(\R\) by theorem~1.11.  Let \(α = \inf A\).  For all \(x \in A\), we have \(α \le x\).  By properties of ordered fields, we obtain \(-x \le -α\).  This means \(-α\) is an upper bound of \(-A\).  If \(-γ < -α\), which means \(α < γ\), then there exists an \(x_0 \in A\) such that \(α \le x_0 < γ\) by definition~1.8, which is the same as \(-γ < -x_0 \le -α\). Thus, \(-γ\) is not an upper bound \(-A\).  This shows that
+\item Since \(\R\) is an ordered field with the least-upper-bound property and \(A \subset \R\) is bounded below, \(\inf A\) exists in \(\R\) by Theorem~1.11.  Let \(α = \inf A\).  For all \(x \in A\), we have \(α \le x\).  By properties of ordered fields, we obtain \(-x \le -α\).  This means \(-α\) is an upper bound of \(-A\).  If \(-γ < -α\), which means \(α < γ\), then there exists an \(x_0 \in A\) such that \(x_0 < γ\) by definition~1.8, which is the same as \(-γ < -x_0\).  Thus \(-γ\) is not an upper bound \(-A\).  This shows that
   \begin{equation*}
     \sup(-A) = -α = -\inf A.
   \end{equation*}
   By properties of fields, we obtain \(\inf A = -\sup(-A)\).
   \qed
+
+  In fact, we can obtain similar results for any bounded non-empty subset \(A\) of any \emph{partially order group with the least-upper-bound property} (e.g.\ \(\Z^n\)).  That is, if \(A\) is bounded above, then \(\sup A = -\inf(-A)\); and if \(A\) is bounded below, then \(\inf A = -\sup(-A)\).
+
+\item
+  \begin{enumerate}
+  \item
+    \pushQED{\qed}
+    Let \(α = (b^m)^{1/n}\), which means \(α^n = b^m\).  By \(mq = np\), we have
+    \begin{equation*}
+      (α^q)^n
+      = (α^n)^q
+      = (b^m)^q
+      = b^{mq}
+      = b^{np}
+      = (b^p)^n.
+    \end{equation*}
+    By Theorem~1.21, we obtain \(α^q = b^p\).  Apply this theorem again and we obtain
+    \begin{equation*}
+      (b^m)^{1/n}
+      = α
+      = (b^p)^{1/q}.
+      \qedhere
+    \end{equation*}
+    \popQED
+
+  \item
+    \pushQED{\qed}
+    Let \(r = p/q,\ s = m/n\).  Then we have
+    \begin{align*}
+      b^r \, b^s
+      &= b^{p/q} \, b^{m/n} \\
+      &= (b^{np})^{1/nq} \, (b^{mq})^{1/nq}
+      && \reason{part (a)} \\
+      &= (b^{np} \, b^{mq})^{1/nq}
+      && \reason{Corollary of Theorem~1.21} \\
+      &= (b^{np+mq})^{1/nq} \\
+      &= b^{p/q+m/n}
+      && \reason{part (a)} \\
+      &= b^{r+s}.
+      && \qedhere
+    \end{align*}
+    \popQED
+
+  \item For any \(t \le r\), we have
+    \begin{align*}
+      b^r \, b^{-t}
+      &= b^{r-t}
+      && \reason{part (b)} \\
+      &\ge 1.
+      && \mreason{b > 1,\ r - t \ge 0}
+    \end{align*}
+    Multiplify both sides by \(b^t\) and we obtain \(b^r \ge b^t\).  Thus \(b^r\) is an upper bound of \(B(r)\).  If \(α < b^r\), then \(α\) is not an upper of \(B(r)\) since \(b^r \in B(r)\).  This shows that \(b^r = \sup B(r)\).
+    \qed
+
+  \item We prove \(b^{x+y} = b^x b^y\) by showing that neither \(b^{x+y} < b^x b^y\) nor \(b^{x+y} > b^x b^y\) is possible (trichotomy of ordered sets).
+
+    Suppose \(b^{x+y} < b^x b^y\).  Let \(λ = (b^x b^y - b^{x+y})/(b^x+b^y)\).  Then by our definition of real exponent and \(λ > 0\), there exist two rationals \(t \le x\) and \(s \le y\) such that
+    \begin{equation*}
+      b^x - λ < b^t \le b^x
+      \qand
+      b^y - λ < b^s \le b^y.
+    \end{equation*}
+    It follows that
+    \begin{equation*}
+      b^{x+y}
+      = b^x b^y - (b^x + b^y)λ
+      < (b^x - λ)(b^y - λ)
+      < b^t b^s
+      \le b^x b^y.
+    \end{equation*}
+
+    But \(b^t b^s = b^{t+s}\).  This means we find an \(r\) such that \(r = t + s \le x + y\) but \(b^{x+y} < b^r\), which contradicts our definition of \(b^{x+y}\) (it is not even an upper bound).
+
+    Suppose \(b^{x+y} > b^x b^y\).  Then by definition, there is a rational \(r \le x + y\) such that \(b^x b^y < b^r\).  If \(r < x + y\), then we let \(t = x - (x+y-r)/2\) and \(s = y - (x+y-r)/2\).  It follows that
+    \begin{equation*}
+      b^x b^y < b^{x+y} < b^r = b^{t+s} = b^t b^s \le b^x b^y,
+    \end{equation*}
+    which is absurd.  If \(r = x + y\), then we apply the following fact: by the Archimedean property and Bernoulli's inequality, we can show that for any \(0 \le α < β\) there exists a rational \(w\) such that \(α < b^w < β\).  Thus there is a rational \(r_0\) such that \(b^x b^y < b^{r_0} < b^r = b^{x+y}\).  Repeat the previous steps and this completes the proof.
+    \qed
+  \end{enumerate}
 \end{enumerate}
+
+\section{Notes}
+
+
 
 % Local Variables:
 % TeX-engine: luatex
